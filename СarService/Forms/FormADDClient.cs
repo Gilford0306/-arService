@@ -15,7 +15,7 @@ namespace СarService
 {
     public partial class FormADDClient : Form
     {
-        int i = -1;
+
         public FormADDClient()
         {
             InitializeComponent();
@@ -30,32 +30,19 @@ namespace СarService
             {
                 MessageBox.Show("Fill in the fields");
             }
-            else if (i == -1)
+
             {
-                using (SqlConnection conn = DataBase.conn)
+                using (SqlConnection conn = new SqlConnection(DataBase.strConn))
                 {
                     conn.Open();
-
                     Client client = new Client(0, textBox1.Text.ToString(), textBox2.Text.ToString());
-                    conn.Execute("INSERT INTO [Client]([Login],[Name],[CTours]) VALUES(@Login, @Name,@CTours)", new { client.Login, client.Name});
+                    conn.Execute("INSERT INTO [Client]([Login],[Name]) VALUES(@Login, @Name)", new { client.Login, client.Name });
 
                 }
                 MessageBox.Show("Client is created");
                 this.Close();
             }
-            else
-            {
-                using (SqlConnection conn = new SqlConnection(strConn))
-                {
-                    conn.Open();
 
-                    Client client = new Client(0, textBox1.Text.ToString(), textBox2.Text.ToString(), " ");
-                    conn.Execute("update [Client] set Login = @login, Name=@name where Id = @id", new { client.Login, client.Name, id = i });
-
-                }
-                MessageBox.Show("Client is updated");
-                this.Close();
-            }
         }
     }
 }

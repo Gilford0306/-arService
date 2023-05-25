@@ -16,5 +16,13 @@ namespace СarService
         {
             InitializeComponent();
         }
+        public UserControlPart(Part part):this() 
+        {
+            labelId.Text= part.Id.ToString();
+            labelName.Text= part.Name.ToString();
+            labelmodel.Text= part.Model.ToString();
+            labelPrice.Text= part.Price.ToString();
+
+        }
     }
 }

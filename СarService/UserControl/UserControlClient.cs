@@ -16,5 +16,16 @@ namespace СarService
         {
             InitializeComponent();
         }
+        public UserControlClient(Client client) : this()
+        {
+            labelId.Text = client.Id.ToString();
+            labelLogin.Text = client.Login.ToString();
+            labelName.Text = client.Name.ToString();
+            foreach (Car car in client.cars)
+            {
+                string str = car.Id.ToString() + " " + car.Model.ToString() + " " + car.Year.ToString() + "; ";
+                labelCars.Text += str;
+            }      
+        }
     }
 }

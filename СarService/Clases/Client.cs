@@ -11,7 +11,8 @@ namespace СarService
         public int Id { get; set; }
         public string Login { get; set; }
         public string Name { get; set; }
-        public List<Car> cars { get; set; }
+
+        public List <Car>cars = new List <Car> ();
 
         public Client()
         {
@@ -22,6 +23,7 @@ namespace СarService
             this.Id = id;
             this.Login = login;
             this.Name = name;
+
         }
     }
 }

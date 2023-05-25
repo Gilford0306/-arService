@@ -9,7 +9,7 @@ namespace СarService.Clases
 {
     public static class DataBase
     {
-        static string strConn = "Server=DESKTOP-N6GODSK;" +
+        public static string strConn = "Server=DESKTOP-N6GODSK;" +
                     "Database=CarServiceBase;" +
                 "Trusted_Connection=True;" +
               "TrustServerCertificate=True;";

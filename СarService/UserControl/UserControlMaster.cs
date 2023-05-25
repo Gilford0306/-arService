@@ -16,5 +16,14 @@ namespace СarService
         {
             InitializeComponent();
         }
+        public UserControlMaster(Master master): this ()
+        {
+            labelId.Text = master.Id.ToString();
+            labelName.Text = master.Name.ToString();
+            labelProf.Text=master.Professional.ToString();
+            labelLevel.Text = master.Level.ToString(); 
+        }
+
+
     }
 }
