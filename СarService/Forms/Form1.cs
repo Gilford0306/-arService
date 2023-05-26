@@ -16,6 +16,10 @@ namespace СarService
     public partial class Form1 : Form
     {
         List<Client> clients = new List<Client>();
+        List<Car> cars = new List<Car>();
+        List<Master> masters = new List<Master>();
+        List<Part> parts = new List<Part>();
+        List<Service> services = new List<Service>();
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +27,21 @@ namespace СarService
             {
                 conn.Open();
                 clients = conn.Query<Client>("SELECT * FROM [Client];").ToList();
+                cars = conn.Query<Car>("SELECT * FROM [Car];").ToList();
+                masters = conn.Query<Master>("SELECT * FROM [Master];").ToList();
+                parts = conn.Query<Part>("SELECT * FROM [Part];").ToList();
+                services = conn.Query<Service>("SELECT * FROM [Service];").ToList();
+            }
+            foreach (Client client in clients)
+            {
+                foreach (Car car in cars)
+                {
+                    if (client.Id == car.ClientId)
+                    {
+                        client.cars.Add(car);
+                    }
+                }
+
             }
         }
 

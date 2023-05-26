@@ -11,7 +11,11 @@ namespace СarService
         public int Id { get; set; }
         public string Login { get; set; }
         public string Name { get; set; }
-        public List<Car> cars { get; set; }
+
+        public List <Car>cars = new List <Car> ();
+        public List<Service> services = new List<Service>();
+        public List<Part> parts = new List<Part>();
+
 
         public Client()
         {
@@ -22,6 +26,7 @@ namespace СarService
             this.Id = id;
             this.Login = login;
             this.Name = name;
+
         }
     }
 }

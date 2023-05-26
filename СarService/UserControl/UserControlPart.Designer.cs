@@ -32,7 +32,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
-            this.labelcarstype = new System.Windows.Forms.Label();
+            this.labelmodel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelPrice
@@ -75,21 +75,21 @@
             this.labelId.TabIndex = 10;
             this.labelId.Text = "label1";
             // 
-            // labelcarstype
+            // labelmodel
             // 
-            this.labelcarstype.AutoSize = true;
-            this.labelcarstype.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelcarstype.Location = new System.Drawing.Point(403, 33);
-            this.labelcarstype.Name = "labelcarstype";
-            this.labelcarstype.Size = new System.Drawing.Size(79, 29);
-            this.labelcarstype.TabIndex = 14;
-            this.labelcarstype.Text = "label4";
+            this.labelmodel.AutoSize = true;
+            this.labelmodel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelmodel.Location = new System.Drawing.Point(403, 33);
+            this.labelmodel.Name = "labelmodel";
+            this.labelmodel.Size = new System.Drawing.Size(79, 29);
+            this.labelmodel.TabIndex = 14;
+            this.labelmodel.Text = "label4";
             // 
             // UserControlPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelcarstype);
+            this.Controls.Add(this.labelmodel);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label2);
@@ -107,6 +107,6 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelId;
-        private System.Windows.Forms.Label labelcarstype;
+        private System.Windows.Forms.Label labelmodel;
     }
 }

@@ -12,15 +12,18 @@ namespace СarService
         public int ClientId { get; set; }
         public string Model { get; set; }
 
+        public int Year{ get; set; }
+
         public Car()
         {
                 
         }
-        public Car(int id, int clientId, string model)
+        public Car(int id, string model, int clientId, int year)
         {
             this.Id = id;
-            this.ClientId = clientId;
             this.Model = model;
+            this.ClientId = clientId;
+            this.Year = year;    
         }
     }
 }
