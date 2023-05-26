@@ -29,30 +29,31 @@
         private void InitializeComponent()
         {
             this.labelPrice = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
+            this.labelDesription = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
+            this.labelmaster = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPrice.Location = new System.Drawing.Point(257, 42);
+            this.labelPrice.Location = new System.Drawing.Point(359, 42);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(79, 29);
             this.labelPrice.TabIndex = 18;
             this.labelPrice.Text = "label4";
             // 
-            // labelName
+            // labelDesription
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelName.Location = new System.Drawing.Point(120, 42);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(79, 29);
-            this.labelName.TabIndex = 17;
-            this.labelName.Text = "label3";
+            this.labelDesription.AutoSize = true;
+            this.labelDesription.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDesription.Location = new System.Drawing.Point(173, 42);
+            this.labelDesription.Name = "labelDesription";
+            this.labelDesription.Size = new System.Drawing.Size(79, 29);
+            this.labelDesription.TabIndex = 17;
+            this.labelDesription.Text = "label3";
             // 
             // label2
             // 
@@ -74,16 +75,27 @@
             this.labelId.TabIndex = 15;
             this.labelId.Text = "label1";
             // 
+            // labelmaster
+            // 
+            this.labelmaster.AutoSize = true;
+            this.labelmaster.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelmaster.Location = new System.Drawing.Point(478, 42);
+            this.labelmaster.Name = "labelmaster";
+            this.labelmaster.Size = new System.Drawing.Size(21, 29);
+            this.labelmaster.TabIndex = 19;
+            this.labelmaster.Text = "-";
+            // 
             // UserControlService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelmaster);
             this.Controls.Add(this.labelPrice);
-            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.labelDesription);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelId);
             this.Name = "UserControlService";
-            this.Size = new System.Drawing.Size(520, 115);
+            this.Size = new System.Drawing.Size(857, 115);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,8 +104,9 @@
         #endregion
 
         private System.Windows.Forms.Label labelPrice;
-        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelDesription;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelId;
+        private System.Windows.Forms.Label labelmaster;
     }
 }

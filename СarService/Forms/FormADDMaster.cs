@@ -16,6 +16,7 @@ namespace СarService
 {
     public partial class FormADDMaster : Form
     {
+        int i;
         public FormADDMaster()
         {
             InitializeComponent();
@@ -46,8 +47,10 @@ namespace СarService
                 using (SqlConnection conn = new SqlConnection(DataBase.strConn))
                 {
                     conn.Open();
-                    Master master = new Master(0, textBox1.Text.ToString(), comboBox1.Text.ToString(), Convert.ToInt32(trackBar1.Value.ToString()));
-                    conn.Execute("INSERT INTO [Master]([Name], [Professional], [Level]) VALUES( @Name, @Professional, @Level)", new { master.Name, master.Professional, master.Level });
+                    //Master master = new Master(0, textBox1.Text.ToString(), comboBox1.Text.ToString(), Convert.ToInt32(trackBar1.Value.ToString()));
+                    Master master = new Master(0, textBox1.Text.ToString(), comboBox1.Text.ToString(), Convert.ToInt32(trackBar1.Value.ToString()), i);
+                    conn.Execute("INSERT INTO [Master]([Name], [Professional], [Level], [ServiceId]) VALUES( @Name, @Professional, @Level,  @ServiceId)", new { master.Name, master.Professional, master.Level, master.ServiceId});
+
 
                 }
                 MessageBox.Show("Master is created");
@@ -58,6 +61,12 @@ namespace СarService
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label4.Text = trackBar1.Value.ToString();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            i = comboBox1.SelectedIndex+1;
+            
         }
     }
 }

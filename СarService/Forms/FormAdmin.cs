@@ -21,6 +21,7 @@ namespace СarService
         List<Car> cars = new List<Car>();
         List<Master>masters = new List<Master>();
         List<Part> parts = new List<Part>();
+        List<Service> services = new List<Service>();
         int i;
         public FormAdmin()
         {
@@ -141,20 +142,34 @@ namespace СarService
             this.panel1.Controls.Clear();
             using (SqlConnection conn = new SqlConnection(DataBase.strConn))
             {
-                parts.Clear();
+                services.Clear();
                 conn.Open();
-                parts = conn.Query<Part>("SELECT * FROM [Part];").ToList();
+                services = conn.Query<Service>("SELECT * FROM [Service];").ToList();
+                masters = conn.Query<Master>("SELECT * FROM [Master];").ToList();
 
             }
-
-            int y = 0;
-            for (int i = 0; i < parts.Count; i++)
+            foreach (Service service in services)
             {
-                var item = new UserControlPart(parts[i]);
+                foreach (Master master in masters)
+                {
+                        if (service.Id == master.ServiceId)
+                        {
+                            service.masters.Add(master);
+                        }
+                }
+
+            }
+            int y = 0;
+            for (int i = 0; i < services.Count; i++)
+            {
+                var item = new UserControlService(services[i]);
                 item.Location = new Point(0, y);
                 this.panel1.Controls.Add(item);
+
+                
                 y += item.Height;
             }
+            
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace СarService
 {
@@ -12,6 +13,8 @@ namespace СarService
         public string Name { get; set; }
         public string Professional { get; set; }
         public int Level { get; set; }
+        public int ServiceId { get; set; }
+
 
 
         public Master()
@@ -19,12 +22,14 @@ namespace СarService
                 
         }
 
-        public Master(int id, string name, string Prof, int level)
+        public Master(int id, string name, string Prof, int level, int serviceId)
         {
             Id = id;
             Name = name;
             Professional = Prof;
             Level = level;
+            ServiceId = serviceId;
         }
+
     }
 }
