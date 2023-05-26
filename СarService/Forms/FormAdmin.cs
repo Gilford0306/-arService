@@ -26,6 +26,7 @@ namespace СarService
         public FormAdmin()
         {
             InitializeComponent();
+            button5.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -96,15 +97,28 @@ namespace СarService
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-            FormADDCar newForm = new FormADDCar(i);
-            newForm.Show();
+            foreach (Client client in clients)
+            {
+                if (i == client.Id)
+                {
+                    FormADDCar newForm = new FormADDCar(i);
+                    newForm.Show();
+                }
+            }            
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try { i = Convert.ToInt32(textBox1.Text.ToString()); }
+            try { 
+                i = Convert.ToInt32(textBox1.Text.ToString());
+                if (i>0)
+                {
+                    button5.Enabled = true;
+
+                }
+
+            }
             catch
             {
                 if (textBox1.Text != string.Empty)
@@ -114,6 +128,7 @@ namespace СarService
                 }
 
             }
+
         }
 
         private void button6_Click(object sender, EventArgs e)

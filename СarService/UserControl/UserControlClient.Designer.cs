@@ -74,6 +74,7 @@
             this.labelName.Size = new System.Drawing.Size(79, 29);
             this.labelName.TabIndex = 3;
             this.labelName.Text = "label4";
+
             // 
             // labelCars
             // 
@@ -94,7 +95,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelId);
             this.Name = "UserControlClient";
-            this.Size = new System.Drawing.Size(885, 103);
+            this.Size = new System.Drawing.Size(2351, 103);
             this.ResumeLayout(false);
             this.PerformLayout();
 

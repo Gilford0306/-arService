@@ -23,9 +23,11 @@ namespace СarService
             labelName.Text = client.Name.ToString();
             foreach (Car car in client.cars)
             {
-                string str = car.Id.ToString() + " " + car.Model.ToString() + " " + car.Year.ToString() + "; ";
+                string str = " " + car.Model.ToString() + " " + car.Year.ToString() + "; ";
                 labelCars.Text += str;
             }      
         }
+
+
     }
 }

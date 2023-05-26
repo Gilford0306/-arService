@@ -13,6 +13,9 @@ namespace СarService
         public string Name { get; set; }
 
         public List <Car>cars = new List <Car> ();
+        public List<Service> services = new List<Service>();
+        public List<Part> parts = new List<Part>();
+
 
         public Client()
         {
